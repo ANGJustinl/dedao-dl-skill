@@ -1,11 +1,11 @@
 ---
-name: dedao-dl
+name: dedao skill
 description: Handles interactions with the dedao-dl CLI tool for downloading and managing content from the Dedao (得到) App. Use when the user wants to list bought courses, ebooks, audiobooks, or download them in various formats (PDF, MP3, Markdown, EPUB).
 ---
 
-# dedao-dl
+# dedao skill
 
-This skill guides the agent in using the `dedao-dl` CLI tool to interact with the Dedao (得到) app content.
+This skill guides the agent in using the [`dedao-dl`](https://github.com/yann0917/dedao-dl/) tool to interact with the Dedao (得到) app content.
 
 ## Initialization
 
@@ -78,3 +78,5 @@ For any content download, the typical two-step workflow is:
 - **ALWAYS favor downloading a single article**: First list the course articles using `course -i <course_ID>` or `article -c <course_EnID>`, find the specific article ID, and use `python scripts/run_dedao.py dl <course_ID_or_EnID> <article_ID>`.
 - **DEFAULT FORMAT**: Whenever you download content using `dl` or `dlo`, default to using `-t 3` (Markdown) unless the user explicitly asks for MP3 or PDF. Markdown is safer, faster, and easier to read.
 - When generating markdown for a whole course (if permitted by the user), consider using `-m` to consolidate files unless the user explicitly asks for individual files.
+
+# Special Thanks to https://github.com/yann0917/dedao-dl/
